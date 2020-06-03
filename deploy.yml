@@ -1,0 +1,17 @@
+---
+- name: Build docker image and deploy to example hosting
+  hosts: www
+  roles:
+    - role: practical-ansible.nginx_docker
+      become: true
+      vars:
+        server_names: 'wiki.improliga.cz'
+        project_name: cz-improliga-wiki
+        project_version: '1.34.1-alpha-2'
+        use_ssl: false
+        env:
+          DB_HOST: '{{ lookup("env", "DB_HOST") }}'
+          DB_PORT: '{{ lookup("env", "DB_PORT") }}'
+          DB_USER: '{{ lookup("env", "DB_USER") }}'
+          DB_PASS: '{{ lookup("env", "DB_PASS") }}'
+          DB_NAME: '{{ lookup("env", "DB_NAME") }}'

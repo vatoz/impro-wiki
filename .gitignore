@@ -1,0 +1,7 @@
+backup
+cache
+inventory
+backup.xml
+*.tar
+*.mysql
+*.log
