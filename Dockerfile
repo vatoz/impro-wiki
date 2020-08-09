@@ -74,6 +74,8 @@ RUN set -eux; \
 	chown -R www-data:www-data extensions skins cache images
 
 COPY install-extension.sh install-extension.sh
+COPY improliga-logo.png resources/assets/improliga-logo.png
+COPY improliga-logo-small.png resources/assets/improliga-logo-small.png
 
 RUN ./install-extension.sh https://extdist.wmflabs.org/dist/extensions/HitCounters-REL1_34-48dd6cb.tar.gz HitCounters
 RUN ./install-extension.sh https://extdist.wmflabs.org/dist/extensions/TopTenPages-REL1_34-9b9c4b8.tar.gz TopTenPages

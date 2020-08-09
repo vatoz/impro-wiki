@@ -7,7 +7,7 @@
       vars:
         server_names: 'wiki.improliga.cz'
         project_name: cz-improliga-wiki
-        project_version: '1.34.1-alpha-7'
+        project_version: '1.34.1-alpha-9'
         use_ssl: false
         env:
           DB_HOST: '{{ lookup("env", "DB_HOST") }}'
