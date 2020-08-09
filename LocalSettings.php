@@ -145,6 +145,7 @@ wfLoadExtension( 'SpamBlacklist' );
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'TitleBlacklist' );
 wfLoadExtension( 'WikiEditor' );
+wfLoadExtension( 'AWS' );
 # wfLoadExtension( 'HitCounters' );
 # wfLoadExtension( 'TopTenPages' );
 # wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/QuestyCaptcha' ]);
@@ -152,7 +153,18 @@ wfLoadExtension( 'WikiEditor' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
-$wgCaptchaClass = 'QuestyCaptcha';
+$wgAWSCredentials = [
+  'key' => $_ENV['S3_ACCESS_KEY_ID'],
+  'secret' => $_ENV['S3_ACCESS_KEY_SECRET'],
+  'token' => false,
+];
+
+$wgAWSRegion = 'eu-west-1';
+$wgAWSBucketName = $_ENV['S3_BUCKET_NAME'];
+$wgAWSRepoHashLevels = '2';
+$wgAWSRepoDeletedHashLevels = '3';
+
+# $wgCaptchaClass = 'QuestyCaptcha';
 $arr = array(
 	'Jak se nazývá končetina, na které se nachází chápavý palec?' => 'ruka',
 	'O který faul se jedná, když rozhodčí kreslí obdélník do vduchu?' => 'mimo rámec',

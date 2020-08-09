@@ -5,7 +5,8 @@ RUN apt-get install -y --no-install-recommends \
   git \
   librsvg2-bin \
   python3 \
-  unzip
+  unzip \
+  imagemagick
 
 RUN set -eux; \
   savedAptMark="$(apt-mark showmanual)"; \
