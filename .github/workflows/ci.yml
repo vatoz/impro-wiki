@@ -1,0 +1,29 @@
+---
+name: Integration
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - 'v*'
+
+jobs:
+  deploy:
+    name: Validate configuration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - uses: docker-practice/actions-setup-docker@0.0.1
+        with:
+          docker_version: 19
+          docker_channel: stable
+      - name: Install docker
+        run: sudo apt-get -y install python-docker python3-docker
+      - uses: ansible/ansible-lint-action@master
+        with:
+          targets: |
+            deploy.yml
+      - name: Install ansible deps
+        run: ansible-galaxy install -r requirements.yml

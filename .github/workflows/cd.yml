@@ -1,6 +1,11 @@
 ---
 name: Deployment
 on: push
+  push:
+    branches-ignore:
+      - '**'
+    tags:
+      - 'v*'
 
 jobs:
   deploy:
