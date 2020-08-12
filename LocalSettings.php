@@ -178,4 +178,4 @@ foreach ( $arr as $key => $value ) {
 }
 
 $wgShowExceptionDetails = true;
-
+$wgTmpDirectory = "{$wgUploadDirectory}/tmp";
