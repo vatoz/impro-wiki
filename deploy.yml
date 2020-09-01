@@ -8,6 +8,7 @@
         server_names: 'wiki.improliga.cz'
         project_name: cz-improliga-wiki
         project_version: '1.34.1'
+        admin_email: 'pavel@zak.global'
         env:
           DB_HOST: '{{ lookup("env", "DB_HOST") }}'
           DB_NAME: '{{ lookup("env", "DB_NAME") }}'
