@@ -148,7 +148,7 @@ wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'AWS' );
 # wfLoadExtension( 'HitCounters' );
 # wfLoadExtension( 'TopTenPages' );
-# wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/QuestyCaptcha' ]);
+wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/QuestyCaptcha' ]);
 
 # End of automatically generated settings.
 # Add more configuration options below.
@@ -167,10 +167,14 @@ $wgAWSRepoDeletedHashLevels = '3';
 # $wgCaptchaClass = 'QuestyCaptcha';
 $arr = array(
 	'Jak se nazývá končetina, na které se nachází chápavý palec?' => 'ruka',
-	'O který faul se jedná, když rozhodčí kreslí obdélník do vduchu?' => 'mimo rámec',
+	'O který faul se jedná, když rozhodčí kreslí obdélník do vzduchu?' => 'mimo rámec',
 	'Jak se přezdívá spolku Česká improvizační liga?' => 'Improliga',
 	'Jakou zkratku má tým Kouzelná Improvizační Školka?' => 'KIŠ',
 	'Zvládnete si olíznout loket?' => 'ne',
+	'V jakém městě se nachází Pražský hrad?'  => 'Praha',
+	'Jak se říká intervalu 24 hodin začínajícímu půlnocí?' => 'den',
+	'Opačný geografický termín než rovnoběžka' => 'poledník',
+	 
 );
 
 foreach ( $arr as $key => $value ) {
