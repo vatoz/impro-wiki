@@ -1,4 +1,2 @@
-- src: practical-ansible.nginx_project
-  version: 1.4.0
 - src: practical-ansible.nginx_docker
-  version: 1.7.1
+  version: 1.9.0
