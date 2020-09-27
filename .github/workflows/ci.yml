@@ -27,3 +27,5 @@ jobs:
             deploy.yml
       - name: Install ansible deps
         run: ansible-galaxy install -r requirements.yml
+      - name: Test docker build
+        run: docker build .
