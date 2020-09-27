@@ -63,15 +63,13 @@ RUN { \
 ENV MEDIAWIKI_MAJOR_VERSION 1.34
 ENV MEDIAWIKI_BRANCH REL1_34
 ENV MEDIAWIKI_VERSION 1.34.4
-ENV MEDIAWIKI_SHA512 3a03ac696e2d5300faba0819ba0d876a21798c8dcdc64cc2792c6db0aa81d4feaced8dc133b6ca3e476c770bf51516b0a624cb336784ae3d2b51c8c0aa5987a0
 
 # MediaWiki setup
 RUN set -eux; \
-	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; \
-	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; \
-	tar -x --strip-components=1 -f mediawiki.tar.gz; \
-	rm mediawiki.tar.gz; \
-	chown -R www-data:www-data extensions skins cache images
+  curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; \
+  tar -x --strip-components=1 -f mediawiki.tar.gz; \
+  rm mediawiki.tar.gz; \
+  chown -R www-data:www-data extensions skins cache images
 
 COPY install-extension.sh install-extension.sh
 COPY improliga-logo.png resources/assets/improliga-logo.png
